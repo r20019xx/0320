@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Score</title>
+<meta charset="utf-8">
+</head>
+<body>
+
+<header>
+  <h2>Score</h2>
+</header>
+<p>
+  Enter Score:<br>
+  <input type="number" id="sc"><br>
+</p>
+
+<script>
+  function add(){
+    var x
+    x=parseInt(document.getElementById("sc").value);
+    if (x<60){
+      document.getElementById("ans").innerHTML = "Fail";
+    }else if(x>=60 && x<=100){
+      document.getElementById("ans").innerHTML = "Pass";
+    }else{
+      document.getElementById("sc").value = "";
+      document.getElementById("ans").innerHTML = "Error";
+    }
+  }
+</script>
+
+<button onclick="add()">Result</button>
+<br>
+
+
+<h4>Your score:</h4>
+<h4 id="ans"></h4>
+
+</body>
+</html>
