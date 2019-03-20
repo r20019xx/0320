@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function light(sw) {
+  var pic;
+  if (sw == 0) {
+    pic = "2.jpg"
+  } else {
+    pic = "1.jpg"
+  }
+  document.getElementById('myImage').src = pic;
+}
+</script>
+
+<img id="myImage" src="2.jpg" width="400" height="180">
+
+<p>
+<button type="button" onclick="light(1)">Light On</button>
+<button type="button" onclick="light(0)">Light Off</button>
+</p>
+
+</body>
+</html>
+

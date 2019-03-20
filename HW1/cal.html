@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Calculator</title>
+<meta charset="utf-8">
+</head>
+<body>
+
+<header>
+  <h2>Calculator</h2>
+</header>
+<p>
+  First number:<br>
+  <input type="number" id="first"><br>
+  Second number:<br>
+  <input type="number" id="second"><br>
+</p>
+
+<script>
+  function add(){
+    var x, y;
+    var x=parseFloat(document.getElementById("first").value);
+    var y=parseFloat(document.getElementById("second").value);
+    document.getElementById("ans").innerHTML = x + y;
+  }
+
+  function mus(){
+    var x, y;
+    var x=parseFloat(document.getElementById("first").value);
+    var y=parseFloat(document.getElementById("second").value);
+    document.getElementById("ans").innerHTML = x - y;
+  }
+    function time(){
+    var x, y;
+    var x=parseFloat(document.getElementById("first").value);
+    var y=parseFloat(document.getElementById("second").value);
+    document.getElementById("ans").innerHTML = x * y;
+  }
+    function dve(){
+    var x, y;
+    var x=parseFloat(document.getElementById("first").value);
+    var y=parseFloat(document.getElementById("second").value);
+    document.getElementById("ans").innerHTML = x / y;
+  }
+    function clr(){
+    document.getElementById("first").value="";
+    document.getElementById("second").value="";
+    document.getElementById("ans").innerHTML = "";
+  }
+</script>
+
+<button onclick="add()">+</button><button onclick="mus()">-</button><button onclick="time()">*</button><button onclick="dve()">/</button><button onclick="clr()">C</button>
+<br>
+
+
+<h4>Answer =</h4>
+<h4 id="ans"></h4>
+
+</body>
+</html>
