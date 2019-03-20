@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+	<meta http-equiv="content-type" content="text/html" charset="utf-8">
+</head>
+<body>
+	<canvas id="mycanvas" width="1000" height="500" style="border:1px solid #d3d3d3;">
+		<script>
+			var x=0,y=0;
+			var xm=15; //X size
+			var ym=15; //Y size
+			var fr=0.04;  //Frequency
+			var c = document.getElementById("mycanvas");
+			var cd = c.getContext("2d")
+			cd.fillStyle="#000";
+			var flag = 4;
+			var timer1 = setInterval(function(){
+				switch(flag){
+					case 4:
+					cd.clearRect(x,y,xm,ym);
+					x++;
+					y++;
+					if(x>=(1000-xm)){flag=3;}
+					if(y>=(500-ym)){flag=1;}
+					cd.fillRect(x,y,xm,ym);
+					break;
+					case 3:
+					cd.clearRect(x,y,xm,ym);
+					x--;
+					y++;
+					if(x==0){flag=4;}
+					if(y>=(500-ym)){flag=2;}
+					cd.fillRect(x,y,xm,ym);
+					break;
+					case 1:
+					cd.clearRect(x,y,xm,ym);
+					x++;
+					y--;
+					if(x>=(1000-xm)){flag=2;}
+					if(y==0){flag=4;}
+					cd.fillRect(x,y,xm,ym);
+					break;
+					case 2:
+					cd.clearRect(x,y,xm,ym);
+					x--;
+					y--;
+					if(x==0){flag=1;}
+					if(y==0){flag=3;}
+					cd.fillRect(x,y,xm,ym);
+					break;
+				}
+					
+			},fr);
+		</script>
+	</canvas>	
+</body>
+</html>
