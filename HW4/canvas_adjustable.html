@@ -54,5 +54,20 @@
 			},fr);
 		</script>
 	</canvas>	
+
+	<p>
+		X size:<br>
+  		<input type="number" id="xsz"><br>
+ 		Y size:<br>
+ 		<input type="number" id="ysz"><br><br>
+ 		<button onclick="add()">Adj</button>
+	</p>
+<script>
+	function add(){
+		cd.clearRect(x,y,xm,ym);
+    	xm=parseFloat(document.getElementById("xsz").value);
+    	ym=parseFloat(document.getElementById("ysz").value);
+  	}
+</script>
 </body>
 </html>
